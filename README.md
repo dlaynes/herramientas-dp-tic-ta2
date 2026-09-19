@@ -38,7 +38,7 @@ NVIDIA_MODEL=openai/gpt-oss-20b
 NVIDIA_TIMEOUT_SECONDS=240
 ```
 
-La primera conexión a NVIDIA puede tardar hasta un minuto. El código usa un timeout de 240 segundos por defecto para evitar bloqueos indefinidos. Si desea reutilizar localmente una clave ya configurada  puede copiar los datos del archivo `.env` a esta carpeta. No lo suba a otros archivos del repositorio.
+La primera conexión a NVIDIA puede tardar hasta un minuto. El código usa un timeout de 240 segundos por defecto para evitar bloqueos indefinidos. Si desea reutilizar localmente una clave ya configurada puede copiar los datos del archivo `.env` al archivo correspondiente del proyecto. No lo suba a otros archivos del repositorio.
 
 ## Ejecutar
 
