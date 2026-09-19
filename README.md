@@ -46,14 +46,8 @@ La primera conexión a NVIDIA puede tardar hasta un minuto. El código usa un ti
 python -m streamlit run app.py
 ```
 
-## Validar esquemas sin llamar a NVIDIA
-
-```powershell
-python -c "from utp_assistant import validate_tool_schemas; validate_tool_schemas(); print('OK')"
-```
-
 ## Notas de seguridad
 
 - `.env` está excluido en `.gitignore`.
-- Las funciones de Jira, Google Calendar y CRM son simuladas para el entregable académico.
+- Las funciones de Jira, Google Calendar y CRM son simuladas.
 - Para producción, reemplace `TOOL_REGISTRY` por clientes reales con permisos mínimos, control humano y auditoría.
