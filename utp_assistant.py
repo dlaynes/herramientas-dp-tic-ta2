@@ -11,7 +11,7 @@ from typing import Any, Callable
 from openai import OpenAI
 
 DEFAULT_NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1"
-DEFAULT_NVIDIA_MODEL = "z-ai/glm-5.3-flash"
+DEFAULT_NVIDIA_MODEL = "openai/gpt-oss-20b"
 
 SYSTEM_PROMPT = """Eres UTP Assistant, un gestor de proyectos de IA proactivo y eficiente que trabaja para UTPConsult, una consultora de desarrollo de software. Tu misión principal es automatizar el procesamiento de correos electrónicos de clientes potenciales y existentes, extrayendo información clave y ejecutando acciones que agilicen el flujo de trabajo del equipo de gestión de proyectos y ventas.
 
@@ -133,8 +133,8 @@ def build_client(api_key: str | None = None, base_url: str | None = None) -> Ope
     if not key:
         raise RuntimeError("NVIDIA_API_KEY no está definida. Configúrala en el archivo .env.")
     provider_url = base_url or os.getenv("NVIDIA_BASE_URL", DEFAULT_NVIDIA_BASE_URL)
-    timeout_seconds = float(os.getenv("NVIDIA_TIMEOUT_SECONDS", "120"))
-    # La primera conexión a NVIDIA puede demorarse alrededor de 1 minuto
+    timeout_seconds = float(os.getenv("NVIDIA_TIMEOUT_SECONDS", "240"))
+    # La primera conexión a NVIDIA puede demorarse alrededor de 1 minuto o más
     return OpenAI(base_url=provider_url, api_key=key, timeout=timeout_seconds, max_retries=1)
 
 

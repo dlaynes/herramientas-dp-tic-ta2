@@ -50,7 +50,7 @@ if submitted:
         st.error("El cuerpo del correo es obligatorio.")
     else:
         try:
-            with st.spinner("Consultando a NVIDIA y ejecutando herramientas..."):
+            with st.spinner("Consultando a NVIDIA y ejecutando herramientas. Espere un momento..."):
                 client = build_client()
                 result = process_email(
                     email_text,

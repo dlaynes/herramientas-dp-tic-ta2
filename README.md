@@ -13,12 +13,12 @@ base/
 └─ .editorconfig
 ```
 
-## Instalación
+## Instalación en Windows
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip (Paso opcional)
 python -m pip install -r requirements.txt
 ```
 
@@ -34,11 +34,11 @@ Contenido mínimo:
 ```env
 NVIDIA_API_KEY=tu_clave_de_nvidia
 NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1
-NVIDIA_MODEL=z-ai/glm-5.3-flash
-NVIDIA_TIMEOUT_SECONDS=120
+NVIDIA_MODEL=openai/gpt-oss-20b
+NVIDIA_TIMEOUT_SECONDS=240
 ```
 
-La primera conexión a NVIDIA puede tardar hasta un minuto. El código usa un timeout de 120 segundos por defecto para evitar bloqueos indefinidos. Si desea reutilizar localmente la clave ya configurada en el ejemplo de la semana 6, puede copiar ese archivo `.env` a esta carpeta. No lo suba al repositorio.
+La primera conexión a NVIDIA puede tardar hasta un minuto. El código usa un timeout de 240 segundos por defecto para evitar bloqueos indefinidos. Si desea reutilizar localmente la clave ya configurada en el ejemplo de la semana 6, puede copiar ese archivo `.env` a esta carpeta. No lo suba al repositorio.
 
 ## Ejecutar
 
@@ -49,5 +49,4 @@ python -m streamlit run app.py
 ## Notas de seguridad
 
 - `.env` está excluido en `.gitignore`.
-- Las funciones de Jira, Google Calendar y CRM son simuladas.
-- Para producción, reemplace `TOOL_REGISTRY` por clientes reales con permisos mínimos, control humano y auditoría.
+- Las funciones de Jira, Google Calendar y CRM son simuladas. En Producción, reemplace las herramientas indicadas en la variable `TOOL_REGISTRY` por clientes reales con permisos mínimos, control humano y auditoría.
